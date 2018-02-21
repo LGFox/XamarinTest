@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="XamarinTest.Views.ManualPage">
+    <ContentPage.Content>
+        <StackLayout Margin="20" Spacing="10">
+            <Label Text="This a calculator app."
+                   VerticalOptions="StartAndExpand" 
+                   HorizontalOptions="CenterAndExpand" />
+            <Label Text="You need to upgrade it with new features. For now the calculator has only '+' and '-' operations. Please, add '*' and '/' into layout, and refactor the app if needed."
+                   VerticalOptions="StartAndExpand" 
+                   HorizontalOptions="CenterAndExpand" />
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

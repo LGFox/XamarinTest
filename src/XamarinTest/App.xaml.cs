@@ -1,32 +1,52 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-
+﻿using Interfaces.PlatformServices;
+using Prism;
+using Prism.Ioc;
+using Prism.Unity;
+using ServiceLocator;
+using ViewModels.ViewModels;
 using Xamarin.Forms;
+using XamarinTest.PlatformServices;
+using XamarinTest.Views;
 
 namespace XamarinTest
 {
-	public partial class App : Application
+	public partial class App : PrismApplication
 	{
-		public App ()
-		{
-			InitializeComponent();
+        public App(IPlatformInitializer initializer = null) : base(initializer)
+        {
+        }
 
-			MainPage = new StartHere();
-		}
+	    protected override void RegisterTypes(IContainerRegistry containerRegistry)
+	    {
+	        containerRegistry.RegisterForNavigation<NavigationPage>();
+            containerRegistry.RegisterForNavigation<StartHerePage, StartHerePageViewModel>();
+            containerRegistry.RegisterForNavigation<ManualPage, ManualPageViewModel>();
 
-		protected override void OnStart ()
+	        containerRegistry.RegisterSingleton<ISettingService, SettingService>();
+	        containerRegistry.RegisterSingleton<IUserDialogService, UserDialogService>();
+            containerRegistry.RegisterSingleton<IPlaySoundService, PlaySoundService>();
+
+            ServicesInitializer.Initialize(containerRegistry, Container);
+	    }
+
+	    protected override async void OnInitialized()
+	    {
+	        InitializeComponent();
+            
+	        await NavigationService.NavigateAsync($"/{nameof(NavigationPage)}/{nameof(StartHerePage)}");
+        }
+
+	    protected override void OnStart ()
 		{
 			// Handle when your app starts
 		}
 
-		protected override void OnSleep ()
+	    protected override void OnSleep ()
 		{
 			// Handle when your app sleeps
 		}
 
-		protected override void OnResume ()
+	    protected override void OnResume ()
 		{
 			// Handle when your app resumes
 		}
