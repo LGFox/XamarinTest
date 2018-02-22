@@ -20,9 +20,10 @@ namespace XamarinTest
 	    {
 	        containerRegistry.RegisterForNavigation<NavigationPage>();
             containerRegistry.RegisterForNavigation<StartHerePage, StartHerePageViewModel>();
-            containerRegistry.RegisterForNavigation<ManualPage, ManualPageViewModel>();
+	        containerRegistry.RegisterForNavigation<ManualPage, ManualPageViewModel>();
+	        containerRegistry.RegisterForNavigation<WikiPage, WikiPageViewModel>();
 
-	        containerRegistry.RegisterSingleton<ISettingService, SettingService>();
+            containerRegistry.RegisterSingleton<ISettingService, SettingService>();
 	        containerRegistry.RegisterSingleton<IUserDialogService, UserDialogService>();
             containerRegistry.RegisterSingleton<IPlaySoundService, PlaySoundService>();
 

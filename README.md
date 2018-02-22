@@ -12,14 +12,28 @@ As a user I want to have a calculator:
 
 # Developer notes
 We should use ICalculatorService.Calculate and we can't change ICalculatorService (let's imagine we can't).
+
 You can change/refactor ICalculatorService.Calculate implementation but don't change the interface. And we should use the interface to do calculations.
+
 We also can change/refactor other parts of the app. We can use additional nuget packages if needed.
+
 "/" and "*" are not implemented. Please add two buttons to the layout and implement them as well.
 
 Additional task:
 - Cover business logic in ICalculatorService.Calculate by Unit tests.
 - Refactor app using recommendations for MVVM pattern
 - Make any other improvements/refactors and describe them in README.md
-- Customize buttons on the keyboard in iOS to make them looking as in Android. But you should still use Xamarin.Forms.Button control as base.
+- Customize buttons on the keyboard in iOS to make them looking as in Android. But you should still use Xamarin.Forms.Button control as a base.
+
+
+# Additional bug
+Steps to reproduce:
+1. Tap "i" icon in the top right corner to navigate Manual page
+2. Tap "i" icon in the top right corner again to navigate Wiki page
+3. Tap back
+
+ERROR: Manual page is opened
+
+EXPECTED: Main page is opened (no matter how much time I tapped "i")
     
 

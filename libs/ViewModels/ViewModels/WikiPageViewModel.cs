@@ -6,10 +6,10 @@ using ViewModels.ViewModels.Base;
 
 namespace ViewModels.ViewModels
 {
-    public class ManualPageViewModel : NavigationBaseViewModel
+    public class WikiPageViewModel : NavigationBaseViewModel
     {
-        public ManualPageViewModel(INavigationService navigationService,
-            IDeviceService deviceService,
+        public WikiPageViewModel(INavigationService navigationService,
+            IDeviceService deviceService, 
             IUserDialogService userDialogService,
             IPlaySoundService playSoundService)
             : base(navigationService, deviceService, userDialogService, playSoundService)
@@ -18,7 +18,7 @@ namespace ViewModels.ViewModels
 
         public async void NavigateToManualPage()
         {
-            await NavigateToUri(nameof(AppPagesEnum.WikiPage));
+            await NavigateToUri(nameof(AppPagesEnum.ManualPage));
         }
     }
 }

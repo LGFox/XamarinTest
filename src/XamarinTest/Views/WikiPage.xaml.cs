@@ -6,17 +6,17 @@ using Xamarin.Forms.Xaml;
 namespace XamarinTest.Views
 {
 	[XamlCompilation(XamlCompilationOptions.Compile)]
-	public partial class ManualPage : ContentPage
+	public partial class WikiPage : ContentPage
 	{
-		public ManualPage ()
+		public WikiPage ()
 		{
 			InitializeComponent ();
 		    Icon.Clicked += IconOnClicked;
         }
+        
+	    private WikiPageViewModel ViewModel => (WikiPageViewModel)this.BindingContext;
 
-	    private ManualPageViewModel ViewModel => (ManualPageViewModel)this.BindingContext;
-
-        private void IconOnClicked(object sender, EventArgs eventArgs)
+	    private void IconOnClicked(object sender, EventArgs eventArgs)
 	    {
 	        ViewModel.NavigateToManualPage();
 	    }

@@ -3,6 +3,7 @@
     public enum AppPagesEnum
     {
         StartHerePage,
-        ManualPage
+        ManualPage,
+        WikiPage
     }
 }

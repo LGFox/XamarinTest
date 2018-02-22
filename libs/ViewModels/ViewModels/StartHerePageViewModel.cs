@@ -1,12 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
-using System.Runtime.CompilerServices;
-using System.Threading.Tasks;
 using DataStructures.Enums;
 using Interfaces.PlatformServices;
 using Interfaces.Services;
-using Prism.Commands;
 using Prism.Navigation;
 using Prism.Services;
 using ViewModels.ViewModels.Base;
